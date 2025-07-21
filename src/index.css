@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: 0 0% 0%;
+  --accent: 0 0% 75%;
+  --background: 0 0% 100%;
+  --muted: 45 5% 96%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Space Grotesk', sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Chrome texture effect */
+.chrome-texture {
+  background: linear-gradient(135deg, #c0c0c0 0%, #e8e8e8 25%, #c0c0c0 50%, #f0f0f0 75%, #c0c0c0 100%);
+  background-size: 200% 200%;
+  animation: chrome-shimmer 3s ease-in-out infinite;
+}
+
+@keyframes chrome-shimmer {
+  0%, 100% { 
+    background-position: 0% 50%; 
+  }
+
+  50% { 
+    background-position: 100% 50%; 
+  }
+}
+
+/* Gallery lighting effect */
+.gallery-light {
+  position: relative;
+}
+
+.gallery-light::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgb(255 255 255 / 10%) 0%, transparent 70%);
+  pointer-events: none;
+  animation: gallery-glow 4s ease-in-out infinite alternate;
+}
+
+@keyframes gallery-glow {
+  0% { 
+    opacity: 30%; 
+    transform: scale(0.8); 
+  }
+
+  100% { 
+    opacity: 60%; 
+    transform: scale(1.2); 
+  }
+}
